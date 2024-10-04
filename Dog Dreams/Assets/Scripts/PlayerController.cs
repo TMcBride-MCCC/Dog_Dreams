@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D playerRB;
+    //Movement variables
+    private float inputHorizontal;
     public float movementSpeed;
-
+    public float tempMovementSpeed;
+    //Jump variables
     public float jumpHeight;
     public float jumpForce;
     public float jumpGravity;
@@ -15,12 +18,17 @@ public class PlayerController : MonoBehaviour
     private float jumpTime;
     private float jumpTimeMax = 2;
     private bool surface = false;
-
-    private float inputHorizontal;
+    //Zoomies variables
+    private bool zooming;
+    private float zoomTime;
+    private float zoomTimeMax;
+    
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+
+        zoomTimeMax = 3;
     }
 
     // Update is called once per frame
@@ -28,6 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         movePlayerLateral();
         jump();
+
     }
 
     //Handles the L/R movement
@@ -117,6 +126,34 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Surface"))
         {
             surface = false;
+        }
+    }
+
+    //Handles Zoomie Speed boost
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Zoomies"))
+        {
+            tempMovementSpeed = movementSpeed;
+            zooming = true;
+            zoomTime = 0;
+        }
+
+        if (zooming)
+        {
+            //Record zoomTime
+            zoomTime += Time.deltaTime;
+
+            if (zoomTime < zoomTimeMax)
+            {
+                movementSpeed = movementSpeed * 2;
+            }
+
+            if (zoomTime >= zoomTimeMax)
+            {
+                zooming = false;
+                movementSpeed = tempMovementSpeed;
+            }
         }
     }
 }
