@@ -18,17 +18,12 @@ public class PlayerController : MonoBehaviour
     private float jumpTime;
     private float jumpTimeMax = 2;
     private bool surface = false;
-    //Zoomies variables
-    private bool zooming;
-    private float zoomTime;
-    private float zoomTimeMax;
     
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
 
-        zoomTimeMax = 3;
     }
 
     // Update is called once per frame
@@ -129,31 +124,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //Handles Zoomie Speed boost
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Zoomies"))
-        {
-            tempMovementSpeed = movementSpeed;
-            zooming = true;
-            zoomTime = 0;
-        }
-
-        if (zooming)
-        {
-            //Record zoomTime
-            zoomTime += Time.deltaTime;
-
-            if (zoomTime < zoomTimeMax)
-            {
-                movementSpeed = movementSpeed * 2;
-            }
-
-            if (zoomTime >= zoomTimeMax)
-            {
-                zooming = false;
-                movementSpeed = tempMovementSpeed;
-            }
-        }
-    }
 }
