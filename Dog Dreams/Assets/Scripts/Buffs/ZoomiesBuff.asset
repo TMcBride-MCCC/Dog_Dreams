@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d8164a9c3147447b74e156912f7205, type: 3}
   m_Name: ZoomiesBuff
   m_EditorClassIdentifier: 
-  speedMult: 0
+  speedMult: 2

@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
     {
         movePlayerLateral();
         jump();
-
     }
 
     //Handles the L/R movement
@@ -123,5 +122,4 @@ public class PlayerController : MonoBehaviour
             surface = false;
         }
     }
-
 }
