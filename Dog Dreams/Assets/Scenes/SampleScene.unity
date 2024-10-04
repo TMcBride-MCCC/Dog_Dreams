@@ -424,7 +424,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 4
-  jumpforce: 4
+  jumpHeight: 1.5
+  jumpForce: 1.5
+  jumpGravity: 2
+  fallGravity: 8
 --- !u!1 &1826743036
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +441,7 @@ GameObject:
   - component: {fileID: 1826743039}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Surface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
