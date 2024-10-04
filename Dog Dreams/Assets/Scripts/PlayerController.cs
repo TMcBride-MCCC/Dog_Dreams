@@ -30,13 +30,35 @@ public class PlayerController : MonoBehaviour
         jump();
     }
 
+    //Handles the L/R movement
     private void movePlayerLateral()
     {
         //Moves player left & right with Horizontal (prepackaged in Unity)
         inputHorizontal = Input.GetAxisRaw("Horizontal");
 
         playerRB.velocity = new Vector2(movementSpeed * inputHorizontal, playerRB.velocity.y);
+        
+        //Call player direction
+        if (inputHorizontal != 0)
+        {
+            playerDirection(inputHorizontal);
+        }
     }
+
+    //Handles the direction that the Player is facing
+    private void playerDirection(float inputHorizontal)
+    {
+        if (inputHorizontal > 0)
+        {
+            //Moving to the right
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (inputHorizontal < 0)
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+    }
+
 
     private void jump()
     {
