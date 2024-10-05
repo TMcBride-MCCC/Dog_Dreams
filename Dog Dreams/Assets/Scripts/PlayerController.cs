@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private float jumpTime;
     private float jumpTimeMax = 2;
     private bool surface = false;
+    //Health variables
+    public float health = 4;
     
     // Start is called before the first frame update
     void Start()
