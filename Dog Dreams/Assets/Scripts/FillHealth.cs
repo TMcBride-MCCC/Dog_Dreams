@@ -6,15 +6,21 @@ using UnityEngine.UI;
 
 public class FillHealth : MonoBehaviour
 {
-    private int currVal; 
-    public int maxVal;
+    private int currHP; 
+    private int maxHP;
+    private PlayerController playerController;
     public Image fill;
 
     // Start is called before the first frame update
     void Start()
     {
-        currVal = maxVal;
-        fill.fillAmount = 1;
+        //Get the PlayerController
+        playerController = FindAnyObjectByType<PlayerController>();
+        //Set values
+        currHP = playerController.health;
+        maxHP = playerController.maxHealth;
+        //Controll the fill on UI
+        fill.fillAmount = (float)currHP / maxHP;
     }
 
     // Update is called once per frame
@@ -30,29 +36,37 @@ public class FillHealth : MonoBehaviour
         {
             subtractFromHealth(1);
         }
+
+        //Check values
+        currHP = playerController.health;
+        maxHP = playerController.maxHealth;
+        //Control the fill on UI
+        fill.fillAmount = (float)currHP / maxHP;
     }
 
     public void addToHealth(int i)
     {
-        currVal += i;
+        currHP += i;
 
-        if (currVal > maxVal)
+        if (currHP > maxHP)
         {
-            currVal = maxVal;
+            currHP = maxHP;
         }
 
-        fill.fillAmount = (float) currVal / maxVal;
+        playerController.health = currHP;
+        fill.fillAmount = (float) currHP / maxHP;
     }
 
     public void subtractFromHealth(int i)
     {
-        currVal -= i;
+        currHP -= i;
 
-        if (currVal < 0)
+        if (currHP < 0)
         {
-            currVal = 0;
+            currHP = 0;
         }
 
-        fill.fillAmount = (float)currVal / maxVal;
+        playerController.health = currHP;
+        fill.fillAmount = (float)currHP / maxHP;
     }
 }
