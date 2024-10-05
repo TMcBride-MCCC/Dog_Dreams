@@ -5,10 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Buffs/HealthBuff")]
 public class HealthBuff : ApplyBuff
 {
-    public float addHealth;
+    public int addHealth;
 
     public override void Apply(GameObject player)
     {
-        player.GetComponent<PlayerController>().health += addHealth;
+        if (player.GetComponent<PlayerController>().health < player.GetComponent<PlayerController>().maxHealth)
+        {
+            player.GetComponent<PlayerController>().health += addHealth;
+        }
     }
 }
