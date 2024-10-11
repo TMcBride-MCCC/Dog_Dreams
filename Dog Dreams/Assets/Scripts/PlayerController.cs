@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -116,6 +117,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Surface"))
         {
             surface = true;
+        }
+        else if (collision.gameObject.CompareTag("Car"))
+        {
+            //
+            SceneManager.LoadScene("Level01");
         }
     }
 
