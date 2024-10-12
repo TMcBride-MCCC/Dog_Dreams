@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRedCarLeft: {fileID: 7994296307742391915, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
-  spawnRedCarRight: {fileID: 6248817269620306386, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
+  spawnRedCarRight: {fileID: 8114993544200782376, guid: 50f15c06c21c4d8459811d6b3712eb6b, type: 3}
   player: {fileID: 0}
   delay: 3
   spawnLocations:
@@ -1622,63 +1622,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1757931026
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7994296307742391912, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.6429543
-      objectReference: {fileID: 0}
-    - target: {fileID: 7994296307742391912, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.856834
-      objectReference: {fileID: 0}
-    - target: {fileID: 7994296307742391912, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7994296307742391912, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7994296307742391912, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7994296307742391912, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7994296307742391912, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7994296307742391912, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7994296307742391912, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7994296307742391912, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7994296307742391915, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
-      propertyPath: m_Name
-      value: RedCarGoingLeft
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c6c76d2b0e9c6ff428fd7b7a9fbf1ff8, type: 3}
 --- !u!1 &1826743036
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,75 +1961,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050292124}
   m_CullTransparentMesh: 1
---- !u!1001 &2098386870
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6248817268209186173, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_TagString
-      value: Trunk
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269323328632, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_TagString
-      value: Hood
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269620306385, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.9602518
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269620306385, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.8452166
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269620306385, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269620306385, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269620306385, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269620306385, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269620306385, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269620306385, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269620306385, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269620306385, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269620306386, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_Name
-      value: RedCarGoingRight
-      objectReference: {fileID: 0}
-    - target: {fileID: 6248817269620306386, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
-      propertyPath: m_TagString
-      value: Car
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5b275d4a5c03efd46b63d19f0de682ae, type: 3}
 --- !u!1001 &7669445470724972019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2139,6 +2013,10 @@ PrefabInstance:
       propertyPath: health
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3214501493423339593, guid: dc6a5febb7606584e946860607737131, type: 3}
+      propertyPath: bounceForceCar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3271721379278126661, guid: dc6a5febb7606584e946860607737131, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2162,5 +2040,3 @@ SceneRoots:
   - {fileID: 61785302}
   - {fileID: 255534178}
   - {fileID: 1744107288}
-  - {fileID: 2098386870}
-  - {fileID: 1757931026}
