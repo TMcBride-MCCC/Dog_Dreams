@@ -22,14 +22,18 @@ public class PlayerController : MonoBehaviour
     //Health variables
     public int health;
     public int maxHealth;
+    //Car collision variables
+    public float bounceForceCar;
+    private float hitTimer;
     
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
 
-        health = 2;
+        health = 4;
         maxHealth = 4;
+        hitTimer += Time.deltaTime;
     }
 
     // Update is called once per frame
@@ -37,6 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         movePlayerLateral();
         jump();
+        hitTimer += Time.deltaTime;
     }
 
     //Handles the L/R movement
@@ -118,10 +123,30 @@ public class PlayerController : MonoBehaviour
         {
             surface = true;
         }
-        else if (collision.gameObject.CompareTag("Car"))
+        else if (collision.gameObject.CompareTag("Hood"))
         {
-            //
+            //Hood collision kills player
             SceneManager.LoadScene("Level01");
+        }
+        else if (collision.gameObject.CompareTag("Trunk"))
+        {
+            if (hitTimer >= 1f)
+            {
+                //Trunk collision hurts player
+                health--;
+                //Reset timer
+                hitTimer = 0f;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Bounce test for car trunk
+        if (collision.gameObject.CompareTag("Trunk"))
+        {
+            //Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
+            //rb.velocity = new Vector2(rb.velocity.x + 5, bounceForceCar);
         }
     }
 

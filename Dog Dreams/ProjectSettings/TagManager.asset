@@ -7,6 +7,8 @@ TagManager:
   - Surface
   - Zoomies
   - Car
+  - Hood
+  - Trunk
   layers:
   - Default
   - TransparentFX

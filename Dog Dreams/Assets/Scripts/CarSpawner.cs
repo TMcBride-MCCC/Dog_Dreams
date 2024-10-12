@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CarSpawner : MonoBehaviour
 {
-    public GameObject spawnedObject;
+    public GameObject spawnRedCarLeft;
+    public GameObject spawnRedCarRight;
+    public GameObject player;
     private float time;
     public float delay;
     //Positions that a car can spawn from
@@ -12,7 +14,8 @@ public class CarSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Find the player
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -32,8 +35,26 @@ public class CarSpawner : MonoBehaviour
         int spawnNum = Random.Range(0, spawnLocations.Length);
         //Tell the game to choose that location 
         GameObject spawnLocation = spawnLocations[spawnNum];
-        //Tell the game to put the car at that location
-        Instantiate(spawnedObject);
-        spawnedObject.transform.position = new Vector2(spawnLocation.transform.position.x, spawnLocation.transform.position.y);
+
+        //If the player is to the left of the spawn location.....
+        //Spawn the left car
+        if (player.transform.position.x < spawnLocation.transform.position.x)
+        {
+            //Spawn the car
+            GameObject car = Instantiate(spawnRedCarLeft);
+            car.transform.position = new Vector2(spawnLocation.transform.position.x, spawnLocation.transform.position.y);
+            //Set the direction of the car
+            car.GetComponent<CarController>().isMovingLeft = true;
+            car.GetComponent<CarController>().isMovingRight = false;
+        }
+        else
+        {
+            GameObject car = Instantiate(spawnRedCarRight);
+            car.transform.position = new Vector2(spawnLocation.transform.position.x, spawnLocation.transform.position.y);
+            //Set the direction of the car
+            car.GetComponent<CarController>().isMovingLeft = false;
+            car.GetComponent<CarController>().isMovingRight = true;
+        }
+        
     }
 }
