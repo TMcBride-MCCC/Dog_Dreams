@@ -16,9 +16,9 @@ public class GuiButtonHandler : MonoBehaviour
     }
     public void loadGame()
     {
-        SceneManager.LoadScene("Level01");
-        Time.timeScale = 1;
         gameManager.hidePauseMenu();
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Level01");
     }
 
     public void resumeGame()

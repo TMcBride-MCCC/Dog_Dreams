@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float jumpGravity;
     public float fallGravity;
-    private bool jumping;
+    private bool jumping = false;
     private float jumpTime;
     private float jumpTimeMax = 2;
     private bool surface = false;
@@ -32,12 +32,18 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         playerRB = GetComponent<Rigidbody2D>();
         scoreTracker = gameManager.GetComponent<ScoreTracker>();
-
-        health = 4;
-        maxHealth = 4;
         hitTimer += Time.deltaTime;
+
+        playerInit();
+    }
+
+    private void playerInit()
+    {
+        maxHealth = 4;
+        health = 4;
     }
 
     // Update is called once per frame
