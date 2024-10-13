@@ -150,7 +150,6 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Hood"))
         {
             //Hood collision kills player
-            //SceneManager.LoadScene("Level01");
             gameManager.gameOver();
             
         }
@@ -164,6 +163,11 @@ public class PlayerController : MonoBehaviour
                 hitTimer = 0f;
             }
         }
+        else if (collision.gameObject.CompareTag("Cat"))
+        {
+            gameManager.gameOver();
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -175,7 +179,6 @@ public class PlayerController : MonoBehaviour
             boneTimeMult = (int)currTime / 5;
             //Every 5 seconds increase bone point multiplier
             bonePoints = (boneTimeMult + 1) * 5;
-            
             //Add the points to the score
             scoreTracker.addToScore(bonePoints);
             //Destroy the bone
