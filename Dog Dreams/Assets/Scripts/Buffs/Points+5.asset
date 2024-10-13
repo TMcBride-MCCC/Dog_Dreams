@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8145a98adb333c149b02645c89215684, type: 3}
   m_Name: Points+5
   m_EditorClassIdentifier: 
-  Points: 0
+  Points: 5

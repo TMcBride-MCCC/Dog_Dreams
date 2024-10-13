@@ -27,11 +27,13 @@ public class PlayerController : MonoBehaviour
     private float hitTimer;
     //Need to call GameManager to set death
     public GameManager gameManager;
+    public ScoreTracker scoreTracker;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        scoreTracker = gameManager.GetComponent<ScoreTracker>();
 
         health = 4;
         maxHealth = 4;
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour
     {
         movePlayerLateral();
         jump();
+        checkHealth();
         hitTimer += Time.deltaTime;
     }
 
@@ -118,6 +121,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void checkHealth()
+    {
+        if (health <= 0)
+        {
+            gameManager.gameOver();
+        }
+    }
+
     //Handles knowing if we are on a surface or jumping
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -145,14 +156,24 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Bounce test for car trunk
-        if (collision.gameObject.CompareTag("Trunk"))
+    { 
+        if (collision.gameObject.CompareTag("Bone"))
         {
-            //Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
-            //rb.velocity = new Vector2(rb.velocity.x + 5, bounceForceCar);
+            //Debug.Log("Bone collided with");
+            scoreTracker.addToScore(5);
+            Destroy(collision.gameObject);
         }
     }
+
+    /*    private void OnTriggerEnter2D(Collider2D collision)
+        {
+            //Bounce test for car trunk
+            if (collision.gameObject.CompareTag("Trunk"))
+            {
+                Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
+                rb.velocity = new Vector2(rb.velocity.x + 5, bounceForceCar);
+            }
+        }*/
 
     //Handles knowing if we are on a surface or jumping
     private void OnCollisionExit2D(Collision2D collision)
