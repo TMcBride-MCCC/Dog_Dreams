@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour
     //Need to call GameManager to set death
     public GameManager gameManager;
     public ScoreTracker scoreTracker;
+    //Used for point multiplier as time increases
+    private int bonePoints = 5;
+    private float currTime;
+    private int boneTimeMult;
 
     // Start is called before the first frame update
     void Start()
@@ -40,12 +44,6 @@ public class PlayerController : MonoBehaviour
         playerInit();
     }
 
-    private void playerInit()
-    {
-        maxHealth = 4;
-        health = 4;
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -53,6 +51,13 @@ public class PlayerController : MonoBehaviour
         jump();
         checkHealth();
         hitTimer += Time.deltaTime;
+        currTime += Time.deltaTime;
+    }
+
+    private void playerInit()
+    {
+        maxHealth = 4;
+        health = 4;
     }
 
     //Handles the L/R movement
@@ -162,11 +167,18 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    { 
+    {   
         if (collision.gameObject.CompareTag("Bone"))
         {
             //Debug.Log("Bone collided with");
-            scoreTracker.addToScore(5);
+            //Used to know if 5 more seconds has passed
+            boneTimeMult = (int)currTime / 5;
+            //Every 5 seconds increase bone point multiplier
+            bonePoints = (boneTimeMult + 1) * 5;
+            
+            //Add the points to the score
+            scoreTracker.addToScore(bonePoints);
+            //Destroy the bone
             Destroy(collision.gameObject);
         }
     }
