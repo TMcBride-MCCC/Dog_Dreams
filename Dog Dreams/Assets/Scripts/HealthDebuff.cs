@@ -5,13 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Buffs/HealthDebuff")]
 public class HealthDebuff : ApplyBuff
 {
-    public int addHealth;
+    public int minusHealth;
 
     public override void Apply(GameObject player)
     {
         if (player.GetComponent<PlayerController>().health > 0)
         {
-            player.GetComponent<PlayerController>().health -= addHealth;
+            player.GetComponent<PlayerController>().health -= minusHealth;
         }
     }
 }

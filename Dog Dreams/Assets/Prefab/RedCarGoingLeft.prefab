@@ -486,7 +486,9 @@ MonoBehaviour:
   isMovingLeft: 0
   isMovingRight: 0
   speed: 2
-  bounceForcePlayer: 0
+  bounceForcePlayer: 5
+  scoreTracker: {fileID: 0}
+  carVal: 2
 --- !u!60 &8926462081218585969
 PolygonCollider2D:
   m_ObjectHideFlags: 0

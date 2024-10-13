@@ -25,7 +25,9 @@ public class PlayerController : MonoBehaviour
     //Car collision variables
     public float bounceForceCar;
     private float hitTimer;
-    
+    //Need to call GameManager to set death
+    public GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -126,7 +128,9 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Hood"))
         {
             //Hood collision kills player
-            SceneManager.LoadScene("Level01");
+            //SceneManager.LoadScene("Level01");
+            gameManager.gameOver();
+            
         }
         else if (collision.gameObject.CompareTag("Trunk"))
         {
