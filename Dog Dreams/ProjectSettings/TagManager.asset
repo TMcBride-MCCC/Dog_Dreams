@@ -11,6 +11,8 @@ TagManager:
   - Trunk
   - GameManager
   - Bone
+  - Head
+  - Cat
   layers:
   - Default
   - TransparentFX
