@@ -390,6 +390,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 242661539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &238652984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 238652985}
+  m_Layer: 0
+  m_Name: Bird Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &238652985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238652984}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.75, y: 6.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1735712339}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &242661538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,9 +1118,10 @@ GameObject:
   - component: {fileID: 589726334}
   - component: {fileID: 589726333}
   - component: {fileID: 589726332}
+  - component: {fileID: 589726336}
   - component: {fileID: 589726335}
   - component: {fileID: 589726337}
-  - component: {fileID: 589726336}
+  - component: {fileID: 589726338}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -1192,9 +1224,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f9cd3f6a2333f4f9136f1a36ea24d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnedObject: {fileID: 6810639601033704738, guid: 7ea1e539982e11d449ecae5fd6df05ae, type: 3}
+  spawnCatLeft: {fileID: 6810639601033704738, guid: 7ea1e539982e11d449ecae5fd6df05ae, type: 3}
+  spawnCatRight: {fileID: 6471436478796575862, guid: f96af1961b2bfc54b823fb076264128e, type: 3}
   player: {fileID: 0}
-  delay: 5
+  delay: 25
   spawnLocations:
   - {fileID: 1951363889}
   - {fileID: 822020730}
@@ -1203,6 +1236,26 @@ MonoBehaviour:
   - {fileID: 929981263}
   - {fileID: 143416515}
   - {fileID: 1215547289}
+--- !u!114 &589726338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589726331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfbb26f04d425034e85740dd6d331912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnBirdLeft: {fileID: 2915266995050939149, guid: 8345f44e2d87ccd409868d8bc74a5538, type: 3}
+  spawnBirdRight: {fileID: 3536375929181349656, guid: de33b5b53864cc94489bc52cc901ed98, type: 3}
+  player: {fileID: 0}
+  delay: 5
+  spawnLocations:
+  - {fileID: 238652984}
+  - {fileID: 1701951966}
+  - {fileID: 689117365}
 --- !u!1 &607072932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,6 +1357,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 646133915}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &689117365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 689117366}
+  m_Layer: 0
+  m_Name: Bird Spawn (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &689117366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689117365}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 32.53, y: 6.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1735712339}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &774519132
 GameObject:
@@ -3706,11 +3790,76 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1701951966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1701951967}
+  m_Layer: 0
+  m_Name: Bird Spawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1701951967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701951966}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.89, y: 6.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1735712339}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1722658736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 527963277591724817, guid: dc6a5febb7606584e946860607737131, type: 3}
   m_PrefabInstance: {fileID: 7669445470724972019}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1735712338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1735712339}
+  m_Layer: 0
+  m_Name: Bird Spawns
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1735712339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735712338}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.821812, y: 2.4896188, z: -10.019208}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 238652985}
+  - {fileID: 1701951967}
+  - {fileID: 689117366}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1744107287
 GameObject:
   m_ObjectHideFlags: 0
@@ -4423,3 +4572,4 @@ SceneRoots:
   - {fileID: 460065322}
   - {fileID: 1809935617}
   - {fileID: 242661539}
+  - {fileID: 1735712339}

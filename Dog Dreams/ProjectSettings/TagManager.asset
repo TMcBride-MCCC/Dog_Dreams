@@ -13,6 +13,7 @@ TagManager:
   - Bone
   - Head
   - Cat
+  - Bird
   layers:
   - Default
   - TransparentFX
