@@ -82,6 +82,9 @@ public class GameManager : MonoBehaviour
             Debug.Log("Highscore was: " + PlayerPrefs.GetInt("Highscore"));
             PlayerPrefs.SetInt("Highscore", scoreTracker.getScore());
             Debug.Log("Highscore is now: " + PlayerPrefs.GetInt("Highscore"));
+
+            //Save score
+            PlayerPrefs.Save();
         }
         endScore.text = "Final Score: " + scoreTracker.getScore().ToString();
     }

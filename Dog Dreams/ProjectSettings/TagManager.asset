@@ -14,6 +14,7 @@ TagManager:
   - Head
   - Cat
   - Bird
+  - OB
   layers:
   - Default
   - TransparentFX
