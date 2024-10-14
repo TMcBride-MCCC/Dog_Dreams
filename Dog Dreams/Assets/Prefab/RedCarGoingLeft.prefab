@@ -488,7 +488,7 @@ MonoBehaviour:
   speed: 2
   bounceForcePlayer: 5
   scoreTracker: {fileID: 0}
-  carVal: 2
+  carVal: 5
 --- !u!60 &8926462081218585969
 PolygonCollider2D:
   m_ObjectHideFlags: 0
