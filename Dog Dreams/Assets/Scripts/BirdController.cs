@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class CatController : MonoBehaviour
+public class BirdController : MonoBehaviour
 {
     private GameObject player;
     private Vector2 playerLocation;
@@ -13,7 +13,7 @@ public class CatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Let the cat know what the player is
+        //Let the bird know what the player is
         player = GameObject.FindGameObjectWithTag("Player");
         //Find the game Manager
         gameManager = GameObject.FindGameObjectWithTag("GameManager");

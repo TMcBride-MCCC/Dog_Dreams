@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CatSpawner : MonoBehaviour
+public class BirdSpawner : MonoBehaviour
 {
-    public GameObject spawnCatLeft;
-    public GameObject spawnCatRight;
+    public GameObject spawnBirdLeft;
+    public GameObject spawnBirdRight;
     public GameObject player;
     private float time;
     public float delay;
@@ -24,12 +24,12 @@ public class CatSpawner : MonoBehaviour
         time += Time.deltaTime;
         if (time >= delay)
         {
-            spawnCat();
+            spawnBird();
             time = 0f;
         }
     }
 
-    private void spawnCat()
+    private void spawnBird()
     {
         //Randomly choose a spawn location #
         int spawnNum = Random.Range(0, spawnLocations.Length);
@@ -41,12 +41,12 @@ public class CatSpawner : MonoBehaviour
         if (player.transform.position.x < spawnLocation.transform.position.x)
         {
             //Spawn the cat
-            GameObject cat = Instantiate(spawnCatLeft);
+            GameObject cat = Instantiate(spawnBirdLeft);
             cat.transform.position = new Vector2(spawnLocation.transform.position.x, spawnLocation.transform.position.y);
         }
         else
         {
-            GameObject cat = Instantiate(spawnCatRight);
+            GameObject cat = Instantiate(spawnBirdRight);
             cat.transform.position = new Vector2(spawnLocation.transform.position.x, spawnLocation.transform.position.y);
         }
 

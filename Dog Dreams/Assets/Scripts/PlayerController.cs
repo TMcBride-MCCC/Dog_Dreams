@@ -165,8 +165,21 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Cat"))
         {
-            gameManager.gameOver();
-
+            if (hitTimer >= 1f)
+            {
+                health --;
+                hitTimer = 0f;
+                Destroy(collision.gameObject);
+            }
+        }
+        else if (collision.gameObject.CompareTag("Bird"))
+        {
+            if (hitTimer >= 1f)
+            {
+                health--;
+                hitTimer = 0f;
+                Destroy(collision.gameObject);
+            }
         }
     }
 
